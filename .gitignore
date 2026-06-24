@@ -5,6 +5,7 @@ node_modules/
 dist/
 out/
 dist-ssr/
+electron.vite.config.*.mjs
 
 # IDEs and Editors
 .vscode/*
