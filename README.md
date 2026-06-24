@@ -1,75 +1,64 @@
-# Iron Will Desktop Clone 📱
+# Iron Will for PC
 
-Iron Will is a premium, minimalist addiction recovery streak tracker for PC, rebuilt from the ground up as a sleek desktop widget. It is designed to help you stay accountable with an elegant interface and complete offline data privacy.
+> *"He who conquers himself is the mightiest warrior."*
 
----
+If you've ever used the **Iron Will** app on your phone to track a sobriety or addiction recovery streak, you know how powerful that simple number can be. Seeing "Day 47" staring back at you is enough to make you think twice.
 
-## 🌟 Key Features
+The problem? It's only on mobile. When you're at your desk — where most temptations actually happen — your phone is out of reach and so is your accountability tool.
 
-### 🎨 Premium Visual Aesthetics
-- **AMOLED Dark Theme**: Strict dark-mode styling utilizing absolute black backgrounds (`#000000`) and subtle charcoal borders.
-- **Draggable Frameless Window**: Standard operating system borders are removed. The application header acts as a custom title bar allowing you to drag the window anywhere, complete with custom minimize and close controls.
-- **Inter Font Stack**: Loaded dynamically from Google Fonts for a clean, sans-serif typography feel.
-- **Micro-Animations**: Transitions and active scales (e.g., active clicks on buttons) provide immediate tactile feedback.
-
-### ⏱️ Live Accountability Counter
-- **Day Tracker**: A large centered day counter tracking your current streak.
-- **Daily Progress Dial**: An elegant circular SVG progress indicator wrapping the day count, representing the elapsed percentage of the current 24-hour cycle.
-- **Live Clock Grid**: Displays hours, minutes, and seconds elapsed. The clock uses `tabular-nums` formatting to prevent text jittering as the seconds count up.
-- **Daily Motivational Quotes**: A deterministic quote engine that serves one of 31 willpower-oriented quotes each day, updating automatically at midnight.
-
-### 📓 Relapse History Ledger
-- **Input Constraints**: Logging a relapse displays a modal requiring an optional note, restricted to a maximum of 500 characters with a live character counter, and disables manual text resizing to keep the modal layout locked.
-- **History Scroll**: Access a scrollable, timestamped list of past relapse records to reflect on triggers and learn from previous slip-ups.
-
-### 🔒 Local Storage & Data Privacy
-- **sql.js Integration**: Powered by SQLite compiled to WebAssembly. All records, streak states, and logs are stored locally on your machine in a database file (`ironwill.db` in your system's `userData` folder). Your data is 100% private and never sent to external servers.
+**Iron Will for PC** fixes that. It's a full desktop remake of the Iron Will experience, built specifically for Windows, designed to sit quietly on your screen as a slim, always-visible reminder of how far you've come. No bloat, no internet required, no account sign-ups. Just you and your streak.
 
 ---
 
-## 🛠️ Technology Stack
+## 📥 Download for Windows
 
-- **Core Framework**: Electron (v42.5.0) & Vite (v7.2.6)
-- **Frontend library**: React 19 (Strict Mode)
-- **Programming Language**: TypeScript (Strict Typings Enabled)
-- **Styling**: Tailwind CSS v4 & HeroUI v3 (Compound React Components)
-- **Database Engine**: sql.js (SQLite WebAssembly Wrapper)
-- **Icons**: Lucide React
+> **[⬇️ Download the latest installer (.exe)](../../releases/latest)**
+
 
 ---
 
-## 🚀 Getting Started
+## 🛠️ Tech Stack
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v20+ recommended)
-- npm (installed with Node.js)
+Built with modern, production-quality tools:
 
-### 1. Installation
-Clone the repository and install all dependencies:
+| Layer | Technology |
+|---|---|
+| Desktop Shell | Electron v42 |
+| UI Framework | React 19 + TypeScript (strict) |
+| Styling | Tailwind CSS v4 + HeroUI v3 |
+| Database | sql.js (SQLite compiled to WebAssembly) |
+| Bundler | Vite 7 via electron-vite |
+| Icons | Lucide React |
+| Font | Inter (Google Fonts) |
+
+---
+
+## 🔧 Build it yourself
+
+If you'd rather build from source:
+
 ```bash
+# Install dependencies
 npm install
-```
-*Note: Electron v42+ fetches its binaries dynamically on the first run. The installation script will automatically download the correct Electron executable for your system.*
 
-### 2. Development Mode
-Run the Vite development server and launch the frameless Electron window:
-```bash
+# Launch in development mode (with hot-reload)
 npm run dev
-```
 
-### 3. TypeScript Compilation Check
-Verify type-safety across all main, preload, and renderer scripts:
-```bash
+# Run TypeScript type checks
 npm run typecheck
-```
 
-### 4. Build and Packaging
-Build the production bundle and package it into a Windows installer using `electron-builder`:
-```bash
-# Compile and package for Windows (.exe installer)
+# Build and package for Windows
 npm run build:win
-
-# Compile and package in an unpacked directory (for quick testing)
-npm run build:unpack
 ```
-*Note: Packaging automatically generates standard Windows `.ico` and macOS `.icns` icons from the high-resolution source `build/icon.png`.*
+
+> **Note:** Electron v42+ downloads its binary dynamically on the first `npm run dev` or `npx electron` call. This is expected behavior — just let it complete.
+
+---
+
+## Contributing
+
+Pull requests and issues are welcome. If you're in recovery yourself and have ideas for making this tool more useful, I'd love to hear from you.
+
+---
+
+*This project is not affiliated with the official Iron Will mobile app. It is an independent desktop remake built out of personal need.*
