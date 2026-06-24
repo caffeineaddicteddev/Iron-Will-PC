@@ -32,6 +32,12 @@ function createWindow(): void {
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
+    // Force Windows DWM to recalculate the correct client area.
+    // Without this, frameless windows on Windows are clipped by ~5px
+    // on launch until the user drags the window (which triggers a repaint).
+    if (process.platform === 'win32') {
+      mainWindow.setContentSize(360, 640)
+    }
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
