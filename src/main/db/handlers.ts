@@ -7,6 +7,12 @@ export interface Relapse {
   note: string
 }
 
+let onResetCallback: (() => void) | null = null
+
+export function registerResetCallback(cb: () => void): void {
+  onResetCallback = cb
+}
+
 export function registerHandlers(ipcMain: IpcMain): void {
   /**
    * Returns the Unix ms timestamp of when the current streak started.
@@ -36,6 +42,10 @@ export function registerHandlers(ipcMain: IpcMain): void {
     db.run('UPDATE streak_start SET start_time = ? WHERE id = 1', [now])
 
     saveDatabase()
+
+    if (onResetCallback) {
+      onResetCallback()
+    }
   })
 
   /**
@@ -43,9 +53,7 @@ export function registerHandlers(ipcMain: IpcMain): void {
    */
   ipcMain.handle('get-relapses', (): Relapse[] => {
     const db = getDatabase()
-    const result = db.exec(
-      'SELECT id, timestamp, note FROM relapses ORDER BY timestamp DESC'
-    )
+    const result = db.exec('SELECT id, timestamp, note FROM relapses ORDER BY timestamp DESC')
     if (result.length === 0) return []
     return result[0].values.map((row) => ({
       id: row[0] as number,

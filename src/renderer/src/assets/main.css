@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "@heroui/styles";
+@import 'tailwindcss';
+@import '@heroui/styles';
 
 /* Frameless Window Dragging Utilities */
 .drag-region {

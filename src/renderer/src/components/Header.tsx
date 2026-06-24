@@ -5,16 +5,21 @@ import type { ActiveView } from '../types'
 interface HeaderProps {
   activeView: ActiveView
   onViewChange: (view: ActiveView) => void
+  onAboutClick: () => void
 }
 
-export function Header({ activeView, onViewChange }: HeaderProps): ReactNode {
+export function Header({ activeView, onViewChange, onAboutClick }: HeaderProps): ReactNode {
   return (
     <header className="drag-region relative flex items-center justify-between pl-4 pr-2.5 py-2 border-b border-zinc-800 bg-black shrink-0 select-none h-11">
       {/* Left: Branding (text only, no shield) */}
-      <div className="flex items-center">
-        <span className="text-zinc-300 font-bold text-xs tracking-wider uppercase">
+      <div className="flex items-center no-drag">
+        <button
+          onClick={onAboutClick}
+          className="text-zinc-300 hover:text-zinc-100 active:scale-[0.98] font-bold text-xs tracking-wider uppercase cursor-pointer transition-colors border-none bg-transparent outline-none p-0"
+          aria-label="About Iron Will"
+        >
           Iron Will
-        </span>
+        </button>
       </div>
 
       {/* Center: Tab Selector (Absolute Centered) */}

@@ -6,7 +6,7 @@ interface FooterProps {
 
 export function Footer({ onResetClick }: FooterProps): ReactNode {
   return (
-    <footer className="px-4 pb-4 pt-2 shrink-0">
+    <footer className="px-4 pb-[21px] pt-[3px] shrink-0">
       <button
         id="btn-reset-streak"
         onClick={onResetClick}

@@ -8,7 +8,7 @@ interface LedgerViewProps {
 }
 
 function formatTimestamp(ms: number): string {
-  return format(new Date(ms), 'MM/dd/yyyy \'at\' HH:mm')
+  return format(new Date(ms), "MM/dd/yyyy 'at' HH:mm")
 }
 
 export function LedgerView({ relapses }: LedgerViewProps): ReactNode {
@@ -28,17 +28,10 @@ export function LedgerView({ relapses }: LedgerViewProps): ReactNode {
           </p>
         ) : (
           relapses.map((relapse) => (
-            <div
-              key={relapse.id}
-              className="bg-zinc-900/60 border border-zinc-800 rounded-xl p-3"
-            >
-              <p className="text-[11px] text-zinc-500 mb-1">
-                {formatTimestamp(relapse.timestamp)}
-              </p>
+            <div key={relapse.id} className="bg-zinc-900/60 border border-zinc-800 rounded-xl p-3">
+              <p className="text-[11px] text-zinc-500 mb-1">{formatTimestamp(relapse.timestamp)}</p>
               {relapse.note ? (
-                <p className="text-xs text-zinc-300 leading-relaxed">
-                  {relapse.note}
-                </p>
+                <p className="text-xs text-zinc-300 leading-relaxed">{relapse.note}</p>
               ) : (
                 <p className="text-xs text-zinc-600 italic">No note added.</p>
               )}

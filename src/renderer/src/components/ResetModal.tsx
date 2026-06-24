@@ -41,10 +41,7 @@ export function ResetModal({ isOpen, onClose, onConfirm }: ResetModalProps): Rea
       {/* Modal Card */}
       <div className="w-full bg-zinc-900 border border-zinc-700 rounded-2xl p-5 flex flex-col gap-4">
         {/* Header */}
-        <h2
-          id="modal-title"
-          className="text-sm font-bold text-zinc-200"
-        >
+        <h2 id="modal-title" className="text-sm font-bold text-zinc-200">
           Reset Tracker?
         </h2>
 

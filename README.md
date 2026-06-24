@@ -1,6 +1,6 @@
 # Iron Will for PC
 
-> *"He who conquers himself is the mightiest warrior."*
+> _"He who conquers himself is the mightiest warrior."_
 
 If you've ever used the **Iron Will** app on your phone to track a sobriety or addiction recovery streak, you know how powerful that simple number can be. Seeing "Day 47" staring back at you is enough to make you think twice.
 
@@ -14,22 +14,21 @@ The problem? It's only on mobile. When you're at your desk — where most tempta
 
 > **[⬇️ Download the latest installer (.exe)](../../releases/latest)**
 
-
 ---
 
 ## 🛠️ Tech Stack
 
 Built with modern, production-quality tools:
 
-| Layer | Technology |
-|---|---|
-| Desktop Shell | Electron v42 |
-| UI Framework | React 19 + TypeScript (strict) |
-| Styling | Tailwind CSS v4 + HeroUI v3 |
-| Database | sql.js (SQLite compiled to WebAssembly) |
-| Bundler | Vite 7 via electron-vite |
-| Icons | Lucide React |
-| Font | Inter (Google Fonts) |
+| Layer         | Technology                              |
+| ------------- | --------------------------------------- |
+| Desktop Shell | Electron v42                            |
+| UI Framework  | React 19 + TypeScript (strict)          |
+| Styling       | Tailwind CSS v4 + HeroUI v3             |
+| Database      | sql.js (SQLite compiled to WebAssembly) |
+| Bundler       | Vite 7 via electron-vite                |
+| Icons         | Lucide React                            |
+| Font          | Inter (Google Fonts)                    |
 
 ---
 
@@ -61,4 +60,4 @@ Pull requests and issues are welcome. If you're in recovery yourself and have id
 
 ---
 
-*This project is not affiliated with the official Iron Will mobile app. It is an independent desktop remake built out of personal need.*
+_This project is not affiliated with the official Iron Will mobile app. It is an independent desktop remake built out of personal need._
